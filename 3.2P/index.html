@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo center">Task Manager</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h4 class="center">Add a Task</h4>
+        <input type="text" id="task" placeholder="Enter task">
+        <button class="btn waves-effect waves-light blue" onclick="addTask()">Add Task</button>
+
+        <h4 class="center">Tasks</h4>
+        <ul id="taskList" class="collection"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            let task = document.getElementById("task").value;
+            let taskList = document.getElementById("taskList");
+            let listItem = document.createElement("li");
+            listItem.className = "collection-item";
+            listItem.innerText = task;
+            taskList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
